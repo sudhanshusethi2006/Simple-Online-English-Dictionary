@@ -14,7 +14,6 @@ function getData() {
     fetch(url + `${text}`).then(res => { return res.json() }).then(data => obj = data).then(() => callback(obj));
 }
 
-
 function callback(promise) {
     var definitionsDiv = document.getElementById("divDefinitions");
     definitionsDiv.innerHTML = '';
@@ -65,29 +64,34 @@ function callback(promise) {
         divBody.className = "card-body";
         div.appendChild(divBody);
 
-        var meaningsdiv = document.createElement("div");
-        meaningsdiv.className = "row"
-        var definitionLabel = document.createElement("h5");
-        definitionLabel.className = "card-title";
-        definitionLabel.appendChild(document.createTextNode("Meaning: "));
-        meaningsdiv.appendChild(definitionLabel);
+        if (typeof definitions[j].definition !== 'undefined') {
+            var meaningsdiv = document.createElement("div");
+            meaningsdiv.className = "row"
+            var definitionLabel = document.createElement("h5");
+            definitionLabel.className = "card-title";
+            definitionLabel.appendChild(document.createTextNode("Meaning: "));
+            meaningsdiv.appendChild(definitionLabel);
+            var definitionLabelText = document.createElement("label");
+            definitionLabelText.appendChild(document.createTextNode(definitions[j].definition));
+            meaningsdiv.appendChild(definitionLabelText);
+            divBody.appendChild(meaningsdiv);
+        }
 
-        var definitionLabelText = document.createElement("label");
-        definitionLabelText.appendChild(document.createTextNode(definitions[j].definition));
-        meaningsdiv.appendChild(definitionLabelText);
 
-        divBody.appendChild(meaningsdiv);
-        var examplediv = document.createElement("div");
-        examplediv.className = "row"
-        var exampleLabel = document.createElement("h5");
-        exampleLabel.className = "card-title";
-        exampleLabel.appendChild(document.createTextNode("Example : "));
-        examplediv.appendChild(exampleLabel);
+        if (typeof definitions[j].example !== 'undefined') {
+            var examplediv = document.createElement("div");
+            examplediv.className = "row"
+            var exampleLabel = document.createElement("h5");
+            exampleLabel.className = "card-title";
+            exampleLabel.appendChild(document.createTextNode("Example : "));
+            examplediv.appendChild(exampleLabel);
 
-        var exampleLabelText = document.createElement("label");
-        exampleLabelText.appendChild(document.createTextNode(definitions[j].example));
-        examplediv.appendChild(exampleLabelText);
-        divBody.appendChild(examplediv);
+            var exampleLabelText = document.createElement("label");
+            exampleLabelText.appendChild(document.createTextNode(definitions[j].example));
+            examplediv.appendChild(exampleLabelText);
+            divBody.appendChild(examplediv);
+        }
+
 
         if (definitions[j].synonyms.length > 0) {
             var synonymsdiv = document.createElement("div");
