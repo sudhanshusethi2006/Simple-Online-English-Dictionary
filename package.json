@@ -1,0 +1,23 @@
+{
+    "name": "first-",
+    "version": "1.0.0",
+    "description": "",
+    "main": "home.js",
+    "scripts": {
+        "home": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Sudhanshu Sethi",
+    "license": "ISC",
+    "dependencies": {
+        "bootstrap": "^5.1.1",
+        "jquery": "^3.6.0"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.27.5",
+        "gulp": "^4.0.2",
+        "gulp-sass": "^5.0.0",
+        "sass": "^1.43.2",
+        "sass-loader": "^12.2.0",
+        "webpack": "^5.58.2"
+    }
+}

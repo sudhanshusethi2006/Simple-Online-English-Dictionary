@@ -1,0 +1,29 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+    <title> Klick's dictionary </title>
+    <script src="/js/home.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    </script>
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        <h3>Simple Online English Dictionary</h3>
+        <label class="form-label searchBox"> Enter Text: <input class="form-control" type="text" id="txtWord"></label>
+        <button class="btn btn-primary" onclick="getData()">Search</button>
+        <button class="btn btn-danger" onclick="clearPage()">Clear</button>
+
+
+        <div id="divDefinitions" class="definitions">
+        </div>
+    </div>
+</body>
+
+</html>
